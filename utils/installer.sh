@@ -11,6 +11,7 @@ install_prelude () {
         printf "$RED A fatal error occurred during Prelude's installation. Aborting..."
         exit 1
     fi
+    cd $PRELUDE_INSTALL_DIR; git submodule update --init
 }
 
 make_prelude_dirs () {
@@ -118,7 +119,7 @@ done
 
 VERBOSE_COLOR=$BBLUE
 
-[ -z $PRELUDE_URL ] && PRELUDE_URL="https://github.com/bbatsov/prelude.git"
+[ -z $PRELUDE_URL ] && PRELUDE_URL="https://github.com/benquike/prelude.git"
 [ -z "$PRELUDE_INSTALL_DIR" ] && PRELUDE_INSTALL_DIR="$HOME/.emacs.d"
 
 if [ x$PRELUDE_VERBOSE != x ]
@@ -162,7 +163,7 @@ if hash aspell 2>&-
 then
     printf "$GREEN found.$RESET\n"
 else
-    print "$RED not found. Install aspell to benefit from flyspell-mode!$RESET\n"
+    printf "$RED not found. Install aspell to benefit from flyspell-mode!$RESET\n"
 fi
 
 printf  "$CYAN Checking to see if ack is installed... "

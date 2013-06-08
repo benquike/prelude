@@ -1,0 +1,6 @@
+[submodule "personal/howm"]
+	path = personal/howm
+	url = https://github.com/emacsmirror/howm.git
+[submodule "personal/emacsw3m"]
+	path = personal/emacsw3m
+	url = https://github.com/emacsmirror/w3m.git
